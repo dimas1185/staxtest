@@ -16,3 +16,10 @@ It has *dummy* exceptions, no logging options (which is nice to have in real lif
 # unit tests
 Unit tests cover only basic test cases and use no library. In real life project I would use some unit tests library like **boost test** or more lightweigh library like **Catch2**
 It would be nice to have stress tests also
+
+# build and test
+This is cmake project without any but standard library usage. You can use the following commands or your prefered way:
+`mkdir build && cd build`
+`cmake .. && make -j`
+Test:
+`ctest --output-on-failure`
