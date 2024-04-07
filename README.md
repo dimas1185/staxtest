@@ -9,7 +9,7 @@ development time fits into few hours maximum (as per recruter suggestion)
 **dlist** class has typical list complexity:
 * Insertion O(1)
 * Deletion O(N)
-* Access O(N)
+* Access O(N)  
 It also compatible with at least some standard algorithms, implements iterator, range based loop
 It has *dummy* exceptions, no logging options (which is nice to have in real life project and switch it on/off with macro without performance reduction)
 
@@ -18,8 +18,8 @@ Unit tests cover only basic test cases and use no library. In real life project 
 It would be nice to have stress tests also
 
 # build and test
-This is cmake project without any but standard library usage. You can use the following commands or your prefered way:
-`mkdir build && cd build`
-`cmake .. && make -j`
-Test:
-`ctest --output-on-failure`
+This is cmake project without any but standard library usage. You can use the following commands or your prefered way:  
+`mkdir build && cd build`  
+`cmake .. && make -j`  
+Test:  
+`ctest --output-on-failure`  
