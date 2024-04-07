@@ -11,8 +11,7 @@ template<typename T>
 class dlist {
     struct node {
         // shared_ptr may reduce performance (need to check this)
-        // however it provides a nice weak_ptr compatibility which is
-        // used by iterator class
+        // however it provides a nice weak_ptr compatibility which is used by iterator class
         // shared_ptr provides nice optimization, it doesn't use atomic functions in single threaded program
         // but if performance is really impacted this needs to be redesigned
         using ptr_type = std::shared_ptr<node>;
