@@ -19,7 +19,7 @@ class dlist {
         ptr_type prev;
         ptr_type next;
     
-    node(T value) : data(value), prev(nullptr), next(nullptr) {}
+    node(T value) : data(value) {}
     };
 
     class iterator {
