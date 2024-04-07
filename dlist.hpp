@@ -29,18 +29,18 @@ class dlist {
         ptr_type current;
     public:
         using iterator_category = std::forward_iterator_tag;
-        using value_type = int;
-        using difference_type = int;
-        using pointer = int*;
-        using reference = int&;
+        using value_type = T;
+        using difference_type = std::ptrdiff_t;
+        using pointer = T*;
+        using reference = T&;
         iterator() {}
         iterator(ptr_type node) : current(node) {}
         
-        T& operator*() const {
+        reference operator*() const {
             ASSERT_THROW(!current.expired());
             return current.lock()->data;
         }
-        T* operator->() const {
+        pointer operator->() const {
             ASSERT_THROW(!current.expired());
             return &current.lock()->data;
         }
