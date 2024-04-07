@@ -7,6 +7,7 @@ using namespace std;
 
 int main(int, char**){
     dlist<int> t;
+    // checking banch of insertions and deletions
     t.insert(1);
     assert(t == dlist<int>{1});
     t.insert(2);
@@ -31,17 +32,21 @@ int main(int, char**){
     cout << t.size() << endl;
     assert(t == dlist<int>({-1,0,1,3,4,5}));
 
+    // checking emptying container
     t.clear();
     assert(t == dlist<int>());
     assert(!t.size());
 
+    // checking duplicate values work
     t.insert(7);
     t.insert(7);
     assert(t == dlist<int>({7,7}));
 
+    // checking range based loop
     for (auto v : t)
         assert(v == 7);
     
+    // checking pre and post increment iterators
     for (auto it = t.begin(); it != t.end(); ++it)
         assert(*it == 7);
     for (auto it = t.begin(); it != t.end(); it++)
@@ -53,8 +58,10 @@ int main(int, char**){
     std::advance(it, 2);
     assert(*it == 8);
 
+    // checking post increment works correctly
     assert(t.begin()++ == t.begin());
 
+    // checking that iterator still valid after container modification
     t.erase(t.begin());
     t.erase(t.begin());
     assert(*it == 8);
